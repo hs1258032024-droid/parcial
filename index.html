@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubre rutas, naturaleza y experiencias para conocer Chalatenango, El Salvador.">
+  <meta name="theme-color" content="#123b32">
+  <title>Explora Chalatenango | Naturaleza y aventura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- Identidad visual: nombre del proyecto y acceso rápido a la página principal. -->
+  <header class="site-header" id="inicio">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Explora Chalatenango, ir al inicio">
+        <span class="brand-mark" aria-hidden="true">EC</span>
+        <span class="brand-copy">
+          <strong>Explora</strong>
+          <small>CHALATENANGO</small>
+        </span>
+      </a>
+
+      <!-- El botón controla el menú en pantallas pequeñas mediante JavaScript. -->
+      <button class="menu-toggle" id="menuToggle" type="button"
+              aria-label="Abrir menú de navegación" aria-expanded="false"
+              aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <a class="nav-link active" href="#inicio">Inicio</a>
+        <a class="nav-link" href="#destinos">Destinos</a>
+        <a class="nav-link" href="#rutas">Rutas</a>
+        <a class="nav-link" href="#contacto">Contacto</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activar tema oscuro">
+          <span aria-hidden="true">◐</span> <span class="theme-label">Modo oscuro</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- Presentación principal del sitio. La imagen incluye texto alternativo descriptivo. -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <img class="hero-image" src="assets/montanas.svg" alt="Ilustración de montañas verdes y un amanecer en Chalatenango">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow light">EL SALVADOR · NATURALEZA Y AVENTURA</p>
+        <h1 id="heroTitle">Respira profundo.<br><em>Descubre lo extraordinario.</em></h1>
+        <p class="hero-description">Montañas, senderos y pueblos con historias que merecen ser vividas. Tu próxima aventura comienza aquí.</p>
+        <a class="button button-light" href="#destinos">Explorar destinos <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-note"><span class="note-line"></span> 14° de aventura · Chalatenango</div>
+    </section>
+
+    <!-- Sección de destinos: las tarjetas se generan desde JavaScript para practicar el DOM. -->
+    <section class="section destinations-section" id="destinos" aria-labelledby="destinationsTitle">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">LUGARES PARA RECORDAR</p>
+            <h2 id="destinationsTitle">Encuentra tu <em>siguiente destino</em></h2>
+          </div>
+          <p class="section-intro">Una selección de lugares para conectar con la naturaleza y descubrir la esencia de la zona norte.</p>
+        </div>
+
+        <div class="destination-tools">
+          <label class="search-box">
+            <span class="visually-hidden">Buscar destinos</span>
+            <span aria-hidden="true">⌕</span>
+            <input id="destinationSearch" type="search" placeholder="Buscar un destino..." autocomplete="off">
+          </label>
+          <div class="filter-group" role="group" aria-label="Filtrar destinos por categoría">
+            <button class="filter-button active" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+            <button class="filter-button" type="button" data-filter="naturaleza" aria-pressed="false">Naturaleza</button>
+            <button class="filter-button" type="button" data-filter="pueblo" aria-pressed="false">Pueblos</button>
+          </div>
+        </div>
+
+        <div class="destination-grid" id="destinationGrid" aria-live="polite"></div>
+        <p class="empty-state" id="emptyState" hidden>No encontramos destinos con ese criterio. Prueba otra búsqueda.</p>
+      </div>
+    </section>
+
+    <!-- Tabla HTML semántica: caption, thead y tbody facilitan su lectura y accesibilidad. -->
+    <section class="section routes-section" id="rutas" aria-labelledby="routesTitle">
+      <div class="container routes-layout">
+        <div class="routes-copy">
+          <p class="eyebrow">PLANIFICA TU VISITA</p>
+          <h2 id="routesTitle">Rutas para vivir<br><em>sin prisa</em></h2>
+          <p>Consulta esta guía orientativa para organizar una salida. Los tiempos pueden variar según el clima, el transporte y las condiciones del camino.</p>
+          <div class="route-tip">
+            <span class="tip-icon" aria-hidden="true">✦</span>
+            <p><strong>Consejo viajero</strong><br>Usa calzado cómodo, lleva agua y verifica las condiciones locales antes de iniciar una caminata.</p>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <div class="table-heading">
+            <div><span class="eyebrow">GUÍA RÁPIDA</span><h3>Ideas de recorrido</h3></div>
+            <span class="table-count">03 rutas</span>
+          </div>
+          <div class="table-scroll">
+            <table>
+              <caption class="visually-hidden">Rutas sugeridas, tipo de experiencia y duración aproximada</caption>
+              <thead>
+                <tr><th scope="col">Destino</th><th scope="col">Experiencia</th><th scope="col">Tiempo</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">El Pital</th><td><span class="table-dot green"></span> Montaña</td><td>Medio día</td></tr>
+                <tr><th scope="row">La Palma</th><td><span class="table-dot gold"></span> Cultura</td><td>2–3 horas</td></tr>
+                <tr><th scope="row">San Ignacio</th><td><span class="table-dot blue"></span> Pueblo</td><td>2 horas</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-footnote">Duraciones estimadas con fines informativos; no representan horarios oficiales.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario de contacto de demostración: valida los campos en el navegador. -->
+    <section class="section contact-section" id="contacto" aria-labelledby="contactTitle">
+      <div class="container contact-panel">
+        <div>
+          <p class="eyebrow light">SIGAMOS EN CONTACTO</p>
+          <h2 id="contactTitle">La aventura también<br><em>se comparte.</em></h2>
+          <p>Déjanos tu correo y recibe inspiración para tu próxima escapada.</p>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <label for="email">Correo electrónico</label>
+          <div class="form-row">
+            <input id="email" name="email" type="email" placeholder="tunombre@correo.com" required>
+            <button class="button button-gold" type="submit">Enviar <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+          <small>Este formulario es una demostración académica y no almacena datos.</small>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página con navegación secundaria e información institucional del proyecto. -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand footer-brand" href="#inicio">
+        <span class="brand-mark" aria-hidden="true">EC</span>
+        <span class="brand-copy"><strong>Explora</strong><small>CHALATENANGO</small></span>
+      </a>
+      <p>Un proyecto académico de Diseño Web 1.</p>
+      <div class="footer-links">
+        <a href="#destinos">Destinos</a>
+        <a href="#rutas">Rutas</a>
+        <a href="#inicio">Volver arriba ↑</a>
+      </div>
+      <small class="copyright">© <span id="currentYear"></span> Explora Chalatenango</small>
+    </div>
+  </footer>
+</body>
+</html>
